@@ -18,15 +18,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return redirect()->route('admin.dashboard');
 });
 
-// Route::get('login', [AuthController::class, 'showLoginForm'])->name('login.form');
-// Route::post('login', [AuthController::class, 'login'])->name('login');
-// Route::post('logout', [AuthController::class, 'logout'])->name('logout');
+Route::get('login', [AuthController::class, 'index'])->name('admin.login');
+Route::post('login', [AuthController::class, 'login'])->name('login');
+Route::post('logout', [AuthController::class, 'logout'])->name('logout');
 
-// Route::middleware(['auth'])->group(function () {
-//     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
-//     Route::resource('users', UserController::class);
-//     Route::resource('position', PositionController::class);
-// });
+Route::middleware(['auth'])->group(function () {
+    Route::get('dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
+    Route::resource('users', UserController::class);
+    Route::resource('position', PositionController::class);
+});

@@ -9,25 +9,46 @@ use Illuminate\Support\Facades\Auth;
 class AuthController extends Controller
 {
     /**
-     * Contructiong file
+     * Where to redirect users after login.
+     *
+     * @var string
      */
+    protected $redirectTo = '/admin';
+
     public function __construct()
     {
         $this->middleware('guest')->except('logout');
     }
 
     /**
-     * Show login form
+     * Display a listing of the resource.
      *
-     * @param Request $request
-     * @return Response
+     * @return \Illuminate\Http\Response
      */
-    public function showLoginForm(Request $request)
+
+    public function index()
     {
-        return view('auth.login', [
-            'page_title' => 'Login'
-        ]);
+        if (Auth::guard('admin')->check()) {
+            return redirect()->route('admin.dashboard');
+        } else {
+            return view('auth/login');
+        }
+
+        // return view('admin/auth/login');
     }
+
+    // /**
+    //  * Show login form
+    //  *
+    //  * @param Request $request
+    //  * @return Response
+    //  */
+    // public function showLoginForm(Request $request)
+    // {
+    //     return view('auth.login', [
+    //         'page_title' => 'Login'
+    //     ]);
+    // }
 
     /**
      * Process login logic
@@ -45,23 +66,23 @@ class AuthController extends Controller
         if (is_null($user)) {
             return redirect()
                 ->back()
-                ->with('error', trans('auth.not_found'));
+                ->with('error', 'Tidak dapat menemukan akun!');
         } else {
             if ($user->is_active == 1) {
                 if (Auth::attempt([
                     'username' => $request->username,
                     'password' => $request->password
                 ])) {
-                    return redirect()->route('dashboard');
+                    return redirect()->route('admin.dashboard');
                 } else {
                     return redirect()
                         ->back()
-                        ->with('error', trans('auth.not_found'));
+                        ->with('error', 'Username dan Password yang anda masukan salah!');
                 }
             } else {
                 return redirect()
                     ->back()
-                    ->with('error', trans('auth.not_found'));
+                    ->with('error', 'Tidak ada akun yang aktif!');
             }
         }
 
@@ -72,7 +93,7 @@ class AuthController extends Controller
     {
         if (auth()->check()) {
             auth()->logout();
-            return redirect()->route('login.form');
+            return redirect()->route('admin.login');
         }
     }
 }
