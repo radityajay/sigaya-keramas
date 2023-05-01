@@ -1,0 +1,100 @@
+.title-qrcode {
+  background-image: linear-gradient(#062844, #1abc9c);
+  border-radius: 15px;
+}
+
+.title-qrcode h1 {
+  color: white;
+  font-weight: 600;
+}
+
+.content-qrcode {
+  margin-left: 50px;
+  margin-right: 50px;
+}
+
+.line-qrcode {
+  border: 4px solid #1abc9c;
+  padding: 38px;
+  border-radius: 25px;
+}
+
+.containerqrpage {
+  text-align: center;
+  border: 1px solid #eee;
+  padding: 15px;
+  border-radius: 8px;
+  color: #263238;
+}
+
+.col-md-offset-4 {
+  margin-left: 33.33333333%;
+}
+
+.qrcodecont {
+  display: flex;
+  justify-content: center;
+}
+
+.qrcodecont .qrcodecont-border {
+  padding: 20px;
+  padding-bottom: 20px;
+  border: 3px solid #1abc9c;
+  border-radius: 10px;
+
+}
+
+.qrcodecont,
+.scanqr {
+  margin-bottom: 15px;
+}
+
+.qrlink a {
+  font-family: Quicksand !important;
+  font-style: normal !important;
+  font-weight: 700 !important;
+  font-size: 15px !important;
+  line-height: 12px !important;
+  color: #316991 !important;
+  margin-bottom: 10px !important;
+}
+
+.qrlink:hover {
+  text-decoration: none;
+  opacity: .5;
+  cursor: pointer;
+}
+
+@media print {
+
+  html,
+  body {
+    width: 210mm;
+    height: 297mm;
+    background: white;
+  }
+
+  .col-md-offset-4 {
+    margin-left: 0%;
+  }
+
+  .title-qrcode {
+    width: 300px;
+    margin-left: 31%;
+  }
+
+  .photo-img {
+    width: 50px;
+  }
+}
+
+.bg-overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  top: 0;
+  opacity: 0.3 !important;
+}

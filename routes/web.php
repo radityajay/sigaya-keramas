@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CagarBudayaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PositionController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\Web\HomeController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -17,9 +19,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', [HomeController::class, 'index']);
+Route::get('/detail/{id}/cagar-budaya', [HomeController::class, 'show'])->name('detail.cagarbudaya');
+Route::get('/list/cagar-budaya', [HomeController::class, 'list_cagarbudaya'])->name('list.cagarbudaya');
+
+Route::resource('cagarbudaya', CagarBudayaController::class);
 
 // Route::get('login', [AuthController::class, 'showLoginForm'])->name('login.form');
 // Route::post('login', [AuthController::class, 'login'])->name('login');

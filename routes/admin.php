@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\CagarBudayaController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PositionController;
 use App\Http\Controllers\UserController;
@@ -29,4 +30,9 @@ Route::middleware(['auth'])->group(function () {
     Route::get('dashboard', [DashboardController::class, 'index'])->name('admin.dashboard');
     Route::resource('users', UserController::class);
     Route::resource('position', PositionController::class);
+    Route::resource('cagar-budaya', CagarBudayaController::class);
+    Route::get('cagar-budaya/{id}/print', [CagarBudayaController::class, 'print'])->name('cagar-budaya.print');
+
 });
+
+Route::post('/upload', [CagarBudayaController::class, 'upload'])->name('upload');

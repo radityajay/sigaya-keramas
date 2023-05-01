@@ -15,7 +15,21 @@
           </a>
         </li>
 
+        <li>
+          <a href="{{ route('cagar-budaya.index') }}" class="waves-effect">
+            <i class="ri-dashboard-line"></i>
+            <span>Cagar Budaya</span>
+          </a>
+        </li>
+
         <li class="menu-title">Master Data</li>
+
+        {{-- <li>
+          <a href="#" class="waves-effect">
+            <i class="ri-contacts-book-line"></i>
+            <span>Category</span>
+          </a>
+        </li> --}}
 
         <li>
           <a href="{{ route('position.index') }}" class="waves-effect">
