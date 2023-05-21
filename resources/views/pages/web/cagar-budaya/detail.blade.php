@@ -90,16 +90,26 @@
                         @endforeach
                     </div>
 
-                    
+                    @if ($data->videos != null)
+                    <div class="mt-3 text-center">
+                        <div class="block-heading text-center">
+                            <h2 class="block-main-heading" style="text-transform: uppercase;  font-size: 2rem;">Video</h2>
+                            <div class="divider"><img src="{{ asset('assets/front/img/divider.png') }}"
+                                    alt="images description"></div>
+                        </div>
+                        <iframe src="{{ $data->videos }}">
+                        </iframe>
+                    </div>
+                    @endif
                 </div>
             </div>
             <div class="block-heading d-lg-block d-none">
-                <h2 class="block-main-heading" style="text-transform: uppercase;  font-size: 2rem;">Map</h2>
+                <h2 class="block-main-heading" style="text-transform: uppercase;  font-size: 2rem;">Maps</h2>
                 <div class="divider"><img src="{{ asset('assets/front/img/divider.png') }}"
                         alt="images description"></div>
             </div>
             <div class="block-heading d-lg-none d-block text-center">
-                <h2 class="block-main-heading" style="text-transform: uppercase; font-size: 2rem;">Map</h2>
+                <h2 class="block-main-heading" style="text-transform: uppercase; font-size: 2rem;">Maps</h2>
                 <div class="divider"><img src="{{ asset('assets/front/img/divider.png') }}"
                         alt="images description"></div>
             </div>
@@ -115,6 +125,7 @@
 @endsection
 
 @push('scripts')
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
 <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
     integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
 <script type="text/javascript">
@@ -124,31 +135,39 @@
         maxZoom: 20,
         subdomains:['mt0','mt1','mt2','mt3']
     }).addTo(map);
+    // const test
+    async function gets() {
+        let url = '{{ url("/") }}/api/cagar-budaya';
+        try {
+            let res = await fetch(url);
+            const test =  await res.json();
+        } catch (error) {
+            console.log(error);
+        }
+    }
 
-    var marker = L.marker([{{ $data->lat ?? -8.5723687 }}, {{ $data->long ?? 115.3260955 }}]).addTo(map);
+    var greenIcon = L.icon({
+        iconUrl: '{{ asset("assets/front/icons/temple.png") }}',
 
-    function updateMarker(lat,lng){
-        marker
-        .setLatLng([lat,lng])
-        .openPopup();
-        return false;
-    };
-
-    map.on('click',function(e) {
-        let latitude  = e.latlng.lat.toString().substring(0,15);
-        let longitude = e.latlng.lng.toString().substring(0,15);
-        $('#latitude').val(latitude);
-        $('#longitude').val(longitude);
-        updateMarker(latitude,longitude);
+        iconSize:     [70, 70], // size of the icon
     });
 
-    var updateMarkerByInputs = function () {
-        return updateMarker( $('#latitude').val(), $('#longitude').val());
-    }
-    $('#latitude').on('input',updateMarkerByInputs);
-    $('#longitude').on('input',updateMarkerByInputs);
+    $.ajax({
+        type: "GET",
+        url: "{{ url('/') }}/api/cagar-budaya",
+        data: {
+            "_token": "{{ csrf_token() }}"
+        },
+        success: function(t) {
+            const cagbud = t;
+            cagbud.map(myFunction);
+            function myFunction(item) {
+                return L.marker([item.lat, item.long], {icon: greenIcon}).bindPopup(item.name).addTo(map);
+            }
+        }
+    })
 
-  });
+    });
 
     var swiper = new Swiper('.mySwiper', {
         loop: true,

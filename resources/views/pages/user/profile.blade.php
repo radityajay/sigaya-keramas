@@ -38,15 +38,6 @@
                 </div>
               </div>
 
-              <div class="mb-3">
-                <div>
-                  <label style="color: #AEAEAE">Position</label>
-                </div>
-                <div>
-                  <span>{{$data->position->name}}</span>
-                </div>
-              </div>
-
             </div>
             <div class="col-sm-8">
               <div class="mb-5">

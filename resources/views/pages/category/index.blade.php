@@ -34,7 +34,7 @@
       <h4 class="mb-sm-0">List {{ $page_title }}</h4>
 
       <div class="page-title-right">
-        <a href="{{ route('cagar-budaya.create') }}" class="btn btn-primary btn-icon-text">
+        <a href="{{ route('category.create') }}" class="btn btn-primary btn-icon-text">
           <div>
             <i style="font-size: 18px;float: left;margin-right: 5px;" class="ri ri-add-circle-line"></i> <span
               style="position: relative;top: 4px;">Add {{ $page_title }}</span>
@@ -54,9 +54,7 @@
         <table id="datatable" class="table dt-responsive nowrap w-100">
           <thead>
             <tr>
-              <th>Date</th>
               <th>Name</th>
-              <th>Kategori</th>
               <th>Action</th>
             </tr>
           </thead>
@@ -77,15 +75,13 @@
 <script type="text/javascript">
   $(document).ready(function(){
         dataTable = $("#datatable").DataTable({
-            ajax: "{{route('cagar-budaya.index')}}?type=datatable",
+            ajax: "{{route('category.index')}}?type=datatable",
             processing: true,
             orderable: true,
             autoWidth: false,
             order: [[ 1, "asc" ]],
             columns: [
-                { data: "created_at", name: "created_at", orderable: true },
                 { data: "name", name: "name", orderable: true },
-                { data: "category.name", name: "category.name", orderable: true },
                 { data: "action", name: "action", orderable: true },
             ]
         });

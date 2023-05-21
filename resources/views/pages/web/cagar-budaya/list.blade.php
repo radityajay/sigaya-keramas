@@ -24,25 +24,24 @@
         </div>
     </section>
     <section class="content-block portfolio-block mt-3" style="padding-top: 0px !important" id="container">
-        <div class="container">
-            <div class="bottom-space text-center text-uppercase">
-                <h2>FILTER</h2>
-                <div class="block-heading bottom-space">
-                    {{-- <span class="block-sub-heading">BERIKUT CAGAR BUDAYA YANG BERADA DI DESA KERAMAS</span> --}}
-                    <div class="divider"><img src="{{ asset('assets/front/img/divider.png') }}" alt="images description"></div>
+        <div class="container mb-5">
+            <div class="col-lg-12">
+                <div class="row">
+                    <div class="col-md-4">
+                        <input class="form-control" type="text" placeholder="Nama Cagar Budaya">
+                    </div>
+                    <div class="col-md-4">
+                        <select class="form-control">
+                            <option>Pilih Kategori</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <button type="submit" class="btn btn-primary">Submit</button>
+                    </div>
                 </div>
             </div>
-            <ul class="filter-nav text-center button-group filter-button-group">
-                <li>
-                    <button data-filter="*">ALL</button>
-                </li>
-                <li>
-                    <button data-filter=".ui">ARTEFAK</button>
-                </li>
-                <li>
-                    <button data-filter=".programming">TEMPAT</button>
-                </li>
-            </ul>
+        </div>
+        <div class="container">
             <div class="row multiple-row v-align-row">
                 @foreach ($list_cagbud as $item)
                 @if ($item->photo_url != null)

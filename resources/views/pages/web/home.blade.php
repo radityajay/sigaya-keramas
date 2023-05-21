@@ -135,15 +135,18 @@
         <section class="content-block count-block text-center p-0 parallax" data-stellar-background-ratio="0.55">
             <div class="container-fluid">
                 <div class="row no-gutters">
-                    <div class="col-sm-12 col-lg-12">
+                    @foreach ($category as $item)
+                    <div class="col-sm-12 col-lg-2">
                         <div class="col-wrap">
                             <div class="icon">
-                                <span class="custom-icon-projects"></span>
+                                <img src="{{ $item->icons_url }}" style="max-height: 100px" class="image-responsive" alt="">
                             </div>
-                            <h3 class="number">{{ $total }}</h3>
-                            <div class="text text-uppercase">TOTAL CAGAR BUDAYA</div>
+                            
+                            <h3 class="number">{{ $item->total }}</h3>
+                            <div class="text text-uppercase">TOTAL {{ $item->name }}</div>
                         </div>
                     </div>
+                    @endforeach
                     {{-- <div class="col-sm-6 col-lg-3">
                         <div class="col-wrap">
                             <div class="icon">

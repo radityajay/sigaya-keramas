@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\CagarBudaya;
 use App\Models\CagarBudayaImg;
+use App\Models\Category;
 use Illuminate\Http\Request;
 
 class CagarBudayaController extends Controller
@@ -16,14 +17,14 @@ class CagarBudayaController extends Controller
     public function index()
     {
         if (request()->type == 'datatable') {
-            $data = CagarBudaya::orderBy('created_at');
+            $data = CagarBudaya::with('category')->orderBy('created_at');
 
             return datatables()->of($data)
                 ->editColumn('created_at', function($data){
                     return date('Y-m-d', strtotime($data->created_at));
                 })
-                ->editColumn('description', function($data){
-                    return strlen($data->description) > 50 ? substr($data->description, 0, 50) . "..." : $data->description;
+                ->editColumn('category.name', function($data){
+                    return $data->category ? $data->category->name : '-';
                 })
                 // ->addColumn('photos', function ($data) {
                 //     $photo = '';
@@ -65,8 +66,10 @@ class CagarBudayaController extends Controller
      */
     public function create()
     {
+        $category = Category::all();
         return view('pages.cagar-budaya.form', [
             'page_title' => 'Cagar Budaya',
+            'category' => $category
         ]);
     }
 
@@ -109,6 +112,7 @@ class CagarBudayaController extends Controller
                             'videos' => $request->video,
                             'lat' => $request->latitude,
                             'long' => $request->longitude,
+                            'category_id' => $request->category_id,
                         ]);
 
             if ($request->list_cagarbudaya_images) {
@@ -179,6 +183,7 @@ class CagarBudayaController extends Controller
     {
         $data = CagarBudaya::find($id);
         $listImage = CagarBudayaImg::where('cagar_budaya_id', $id)->get();
+        $category = Category::all();
         if ($data == null) {
             abort(404);
         }
@@ -186,7 +191,8 @@ class CagarBudayaController extends Controller
         return view('pages.cagar-budaya.form', [
             'page_title' => 'Cagar Budaya',
             'data' => $data,
-            'listImage' => $listImage
+            'listImage' => $listImage,
+            'category' => $category
         ]);
     }
 

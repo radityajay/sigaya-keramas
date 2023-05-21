@@ -4650,16 +4650,16 @@ em.state-invalid {
 	line-height: 4rem;
 }
 
-.search-form-wrapper .form-control,.search-form-wrapper input,.search-form-wrapper textarea {
+/* .search-form-wrapper .form-control,.search-form-wrapper input,.search-form-wrapper textarea {
 	width: 100%;
 	padding-right: 3.5rem;
 	font-size: 1.5rem;
 	font-weight: 300;
 	height: 4.429rem;
 	color: #fff;
-}
+} */
 
-.search-form-wrapper .form-control::-moz-selection,.search-form-wrapper input::-moz-selection,.search-form-wrapper textarea::-moz-selection {
+/* .search-form-wrapper .form-control::-moz-selection,.search-form-wrapper input::-moz-selection,.search-form-wrapper textarea::-moz-selection {
 	background: #f8f8f8;
 }
 
@@ -4686,7 +4686,7 @@ em.state-invalid {
 
 .search-form-wrapper .form-control:focus ~ button,.search-form-wrapper .form-control:hover ~ button,.search-form-wrapper input:focus ~ button,.search-form-wrapper input:hover ~ button,.search-form-wrapper textarea:focus ~ button,.search-form-wrapper textarea:hover ~ button {
 	color: #fff;
-}
+} */
 
 .search-form-wrapper ::-webkit-input-placeholder {
 	color: #fff;
@@ -6477,7 +6477,7 @@ pre {
 
 /******* form styles *******/
 
-.form-control {
+/* .form-control {
 	border: .1429rem solid #f1f1f1;
 	font: 1.125rem/2rem 'Poppins', 'Helvetica Neue', Helvetica, Arial, sans-serif;
 	padding: 0 .9375rem;
@@ -6509,7 +6509,7 @@ textarea.form-control {
 	padding-top: 1rem;
 	padding-bottom: .7143rem;
 	min-height: 180px;
-}
+} */
 
 input:focus::-webkit-input-placeholder,textarea:focus::-webkit-input-placeholder {
 	color: transparent;
@@ -11217,9 +11217,9 @@ a.full-width-icon:hover .social-text {
 		font-size: 1.063rem;
 	}
 
-	.btn {
+	/* .btn {
 		font-size: 1.063rem;
-	}
+	} */
 
 	.btn-alternate.btn {
 		font-size: 1.063rem;
@@ -11451,14 +11451,14 @@ a.full-width-icon:hover .social-text {
 		padding-bottom: 2.8125rem;
 	}
 
-	.btn {
+	/* .btn {
 		min-width: 15.63rem;
 		line-height: 1.3;
 	}
 
 	.btn {
 		min-width: 16.9rem;
-	}
+	} */
 
 	.btn.btn-sm {
 		min-width: 11rem;
@@ -11870,9 +11870,9 @@ a.full-width-icon:hover .social-text {
 		font-size: 1.125rem;
 	}
 
-	.btn {
+	/* .btn {
 		font-size: 1.125rem;
-	}
+	} */
 
 	.btn-alternate.btn {
 		font-size: 1.125rem;

@@ -2,8 +2,10 @@
 
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\CagarBudayaController;
+use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\PositionController;
+use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\UserController;
 use Illuminate\Support\Facades\Route;
 
@@ -32,6 +34,9 @@ Route::middleware(['auth'])->group(function () {
     Route::resource('position', PositionController::class);
     Route::resource('cagar-budaya', CagarBudayaController::class);
     Route::get('cagar-budaya/{id}/print', [CagarBudayaController::class, 'print'])->name('cagar-budaya.print');
+    Route::resource('category', CategoryController::class);
+    Route::get('profile/edit', [ProfileController::class, 'edit'])->name('profile.edit');
+    Route::put('profile/update/{id}', [ProfileController::class, 'update'])->name('profile.update');
 
 });
 

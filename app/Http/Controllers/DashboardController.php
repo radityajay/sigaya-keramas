@@ -2,6 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\CagarBudaya;
+use App\Models\Category;
 use App\Models\Position;
 use App\Models\User;
 use Illuminate\Http\Request;
@@ -15,8 +17,8 @@ class DashboardController extends Controller
      */
     public function index()
     {
-        $positions = Position::all()->count();
-        $users = User::all()->count();
+        $positions = CagarBudaya::all()->count();
+        $users = Category::all()->count();
         // dd($positions);
         return view('pages.dashboard', [
             'positions' => $positions,

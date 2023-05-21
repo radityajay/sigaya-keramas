@@ -13,16 +13,10 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('cagar_budayas', function (Blueprint $table) {
+        Schema::create('categories', function (Blueprint $table) {
             $table->uuid('id')->primary();
             $table->string('name');
-            $table->longText('description');
-            $table->string('sound')->nullable();
-            $table->string('videos')->nullable();
-            $table->string('photo', 200)->nullable();
-            $table->string('lat');
-            $table->string('long');
-            $table->uuid('category_id');
+            $table->string('icons');
             $table->timestamps();
         });
     }
@@ -34,6 +28,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('cagar_budayas');
+        Schema::dropIfExists('categories');
     }
 };

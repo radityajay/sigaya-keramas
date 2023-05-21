@@ -30,20 +30,26 @@
             <span>Category</span>
           </a>
         </li> --}}
-
         <li>
+          <a href="{{ route('category.index') }}" class="waves-effect">
+            <i class="ri-contacts-book-line"></i>
+            <span>Kategori</span>
+          </a>
+        </li>
+
+        {{-- <li>
           <a href="{{ route('position.index') }}" class="waves-effect">
             <i class="ri-contacts-book-line"></i>
-            <span>Position</span>
+            <span>Staff</span>
           </a>
         </li>
 
         <li>
           <a href="{{ route('users.index') }}" class="waves-effect">
             <i class="ri-account-circle-line"></i>
-            <span>User</span>
+            <span>Pengguna</span>
           </a>
-        </li>
+        </li> --}}
 
 
       </ul>

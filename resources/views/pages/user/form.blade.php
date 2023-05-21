@@ -33,7 +33,7 @@
       <div class="card-body">
         <h4 class="card-title">Form {{ $page_title }}</h4>
         <br>
-        <form action="{{ isset($data) ? route('users.update', $data->id) : route('users.store') }}" method="POST">
+        <form action="{{ isset($data) ? route('profile.update', $data->id) : route('profile.store') }}" method="POST">
           @csrf
 
           @if (isset($data))
@@ -65,7 +65,7 @@
             @endif
           </div>
 
-          <div class="mb-3">
+          {{-- <div class="mb-3">
             <label>Position</label>
             <select name="position_id" required class="form-control">
               <option value="null" disabled>Select Position</option>
@@ -77,9 +77,9 @@
                   @endif
               @endforeach
             </select>
-          </div>
+          </div> --}}
 
-          <div class="mb-3">
+          {{-- <div class="mb-3">
             <div class="custom-control custom-checkbox">
               <input type="checkbox" class="custom-control-input ind-checkbox"
                   id="is_active"
@@ -92,7 +92,7 @@
                   value="true">
               <label class="custom-control-label align-middle" for="is_active">Active</label>
             </div>
-          </div>
+          </div> --}}
 
           <div class="mb-0" style="float: right">
             <div>

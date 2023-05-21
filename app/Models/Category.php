@@ -7,23 +7,21 @@ use Illuminate\Database\Eloquent\Model;
 use Illuminate\Support\Facades\Storage;
 use Uuid;
 
-class Config extends Model
+class Category extends Model
 {
     use HasFactory;
 
-    protected $table = 'config';
+    protected $table = 'categories';
 
     public $incrementing = false;
+
     protected $keyType = 'string';
-    protected $appends = ['logo_url'];
+
+    protected $appends = ['icons_url'];
 
     protected $fillable = [
-        'website_title',
-        'website_description',
-        'phone',
-        'email',
-        'address',
-        'logo'
+        'name',
+        'icons',
     ];
 
     /**
@@ -37,13 +35,8 @@ class Config extends Model
         });
     }
 
-    public function getLogoUrlAttribute()
+    public function getIconsUrlAttribute()
     {
-        return Storage::url('public/upload/logos/' . $this->logo);
-    }
-
-    public function cagarBudayaImg()
-    {
-        return $this->hasMany('App\Models\CagarBudayaImg', 'cagar_budaya_id');
+        return Storage::url('public/upload/icons/' . $this->icons);
     }
 }

@@ -60,7 +60,6 @@ class AuthController extends Controller
     {
         // dd($request->all());
         $user = User::where('username', $request->username)
-            ->where('is_active', true)
             ->first();
 
         if (is_null($user)) {
@@ -68,21 +67,15 @@ class AuthController extends Controller
                 ->back()
                 ->with('error', 'Tidak dapat menemukan akun!');
         } else {
-            if ($user->is_active == 1) {
-                if (Auth::attempt([
-                    'username' => $request->username,
-                    'password' => $request->password
-                ])) {
-                    return redirect()->route('admin.dashboard');
-                } else {
-                    return redirect()
-                        ->back()
-                        ->with('error', 'Username dan Password yang anda masukan salah!');
-                }
+            if (Auth::attempt([
+                'username' => $request->username,
+                'password' => $request->password
+            ])) {
+                return redirect()->route('admin.dashboard');
             } else {
                 return redirect()
                     ->back()
-                    ->with('error', 'Tidak ada akun yang aktif!');
+                    ->with('error', 'Username dan Password yang anda masukan salah!');
             }
         }
 

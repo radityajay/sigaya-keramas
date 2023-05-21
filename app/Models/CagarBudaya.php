@@ -23,7 +23,8 @@ class CagarBudaya extends Model
         'videos',
         'photo',
         'lat',
-        'long'
+        'long',
+        'category_id'
     ];
 
     /**
@@ -45,5 +46,9 @@ class CagarBudaya extends Model
     public function cagarBudayaImg()
     {
         return $this->hasMany('App\Models\CagarBudayaImg', 'cagar_budaya_id');
+    }
+    public function category()
+    {
+        return $this->belongsTo('App\Models\Category', 'category_id');
     }
 }

@@ -41,14 +41,13 @@
         <div class="card-body">
           <h4 class="card-title">Form {{ $page_title }}</h4>
           <br>
-          <div class="mb-3">
-            <label><span style="color: red">*</span> Nama</label>
-            <input type="text" name="name" class="form-control" required placeholder="Pura Kebo Edan"
-              value="{{isset($data) ? $data->name : old('name')}}" />
-          </div>
-  
           <div class="row">
             <div class="col-lg-6">
+              <div class="mb-3">
+                <label><span style="color: red">*</span> Nama</label>
+                <input type="text" name="name" class="form-control" required placeholder="Pura Kebo Edan"
+                  value="{{isset($data) ? $data->name : old('name')}}" />
+              </div>
               <div class="mb-3">
                 <label>Link Sound</label>
                 <input type="text" name="sound" class="form-control" placeholder=""
@@ -56,6 +55,19 @@
               </div>
             </div>
             <div class="col-lg-6">
+              <div class="mb-3">
+                <label>Kategori</label>
+                <select name="category_id" required class="form-control">
+                  <option value="null" disabled>Select Kategori</option>
+                  @foreach ($category as $item)
+                      @if (isset($data))
+                          <option value="{{$item->id}}" {{$data->postion_id == $item->id ? 'selected' : ''}}>{{$item->name}}</option>
+                      @else
+                          <option value="{{$item->id}}" {{old('category_id') == $item->id ? 'selected' : ''}}>{{$item->name}}</option>
+                      @endif
+                  @endforeach
+                </select>
+              </div>
               <div class="mb-3">
                 <label>Link Video</label>
                 <input type="text" name="video" class="form-control" placeholder=""

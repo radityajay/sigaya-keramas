@@ -1,0 +1,175 @@
+.main-search-input {
+  margin-top: 50px;
+  border-radius: 50px;
+  width: 100%;
+  background-color: #fff;
+  box-shadow: 0 0 8px 0 rgba(0, 0, 0, 0.12);
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  padding: 9px;
+  max-height: 68px;
+}
+.main-search-input {
+  text-align: left;
+}
+.main-search-input-item, .main-search-input-item #autocomplete-input {
+  padding: 0 15px;
+}
+.main-search-input-item {
+  flex: 1;
+  border-right: 1px solid #e9e9e9;
+  margin-top: 3px;
+  position: relative;
+  padding-left: 30px;
+  padding-right: 30px;
+}
+body, h1, h2, h3, h4, h5, h6, input[type="text"], input[type="password"], input[type="email"], textarea, select, input[type="button"], input[type="submit"], button, #tiptip_content, .map-box p, .map-box div, .numerical-rating .rating-counter, body .menu-responsive i.menu-trigger:after {
+  font-family: "Raleway", "HelveticaNeue", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  text-transform: none;
+}
+select {
+  padding: 15px 18px;
+  cursor: pointer;
+}
+.main-search-input input, .main-search-input input:focus {
+  font-size: 16px;
+  border: none;
+  background: #fff;
+  margin: 0;
+  padding: 0;
+  height: 44px;
+  line-height: 44px;
+  box-shadow: none;
+}
+input {
+  -webkit-transition: all 0.1s ease-in-out;
+  -moz-transition: all 0.1s ease-in-out;
+  -o-transition: all 0.1s ease-in-out;
+  -ms-transition: all 0.1s ease-in-out;
+  transition: all 0.1s ease-in-out;
+}
+input, input[type="text"], input[type="password"], input[type="email"], input[type="number"], textarea, select {
+  height: 51px;
+  line-height: 51px;
+  /* padding: 0 20px; */
+  outline: none;
+  font-size: 15px;
+  color: #808080;
+  margin: 0 0 16px 0;
+  max-width: 100%;
+  width: 100%;
+  box-sizing: border-box;
+  /* display: block; */
+  background-color: #fff;
+  border: 1px solid #dbdbdb;
+  box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.06);
+  font-weight: 500;
+  opacity: 1;
+  border-radius: 3px;
+}
+.main-search-input-item .chosen-container {
+  font-size: 16px;
+}
+.main-search-input .main-search-input-item:nth-last-child(2) {
+  border-right: none;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+.main-search-input-item .chosen-container-single .chosen-single, .main-search-input-item .chosen-single.chosen-container-active {
+  position: relative;
+  display: block;
+  overflow: visible;
+  padding: 0 0 0 15px;
+  height: 44px;
+  line-height: 44px;
+  border: 1px solid #fff;
+  background-color: #fff;
+  color: #888;
+  border-radius: 4px 4px 0 0;
+  z-index: 100;
+  box-shadow: none;
+  transition: all 0.3s;
+}
+.chosen-container-single .chosen-single {
+  position: relative;
+  display: block;
+  overflow: hidden;
+  padding: 0 0 0 18px;
+  height: 51px;
+  line-height: 50px;
+  border: 1px solid #dbdbdb;
+  box-shadow: 0 1px 3px 0px rgba(0, 0, 0, 0.08);
+  background-color: #fff;
+  color: #888;
+  text-decoration: none;
+  white-space: nowrap;
+  font-weight: 500;
+  border-radius: 4px;
+}
+.chosen-container a {
+  cursor: pointer;
+}
+.chosen-container * {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.chosen-container {
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  font-size: 15px;
+  zoom: 1;
+  *display: inline;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  user-select: none;
+}
+
+.main-search-input button.button {
+  font-size: 18px;
+  font-weight: 600;
+  padding: 0 40px;
+  margin-right: 1px;
+  height: 50px;
+  outline: none;
+}
+
+.daterangepicker td.active.end-date.in-range.available, .qtyTotal, .mm-menu em.mm-counter, .option-set li a.selected, .category-small-box:hover, .pricing-list-container h4:after, #backtotop a, .chosen-container-multi .chosen-choices li.search-choice, .select-options li:hover, button.panel-apply, .layout-switcher a:hover, .listing-features.checkboxes li:before, .comment-by a.reply:hover, .add-review-photos:hover, .office-address h3:after, .post-img:before, button.button, input[type="button"], input[type="submit"], a.button, a.button.border:hover, table.basic-table th, .plan.featured .plan-price, mark.color, .style-4 .tabs-nav li.active a, .style-5 .tabs-nav li.active a, .dashboard-list-box .button.gray:hover, .change-photo-btn:hover, .dashboard-list-box a.rate-review:hover, input:checked + .slider, .add-pricing-submenu.button:hover, .add-pricing-list-item.button:hover, .custom-zoom-in:hover, .custom-zoom-out:hover, #geoLocation:hover, #streetView:hover, #scrollEnabling:hover, #scrollEnabling.enabled, #mapnav-buttons a:hover, #sign-in-dialog .mfp-close:hover, #small-dialog .mfp-close:hover {
+  background-color: #f91942;
+}
+
+button.button {
+  line-height: 26px;
+}
+
+button.button, input[type="button"], input[type="submit"], a.button.border, a.button {
+  background-color: #66676b;
+  top: 0;
+  padding: 9px 20px;
+  color: #fff;
+  position: relative;
+  font-size: 15px;
+  font-weight: 600;
+  display: inline-block;
+  transition: all 0.2s ease-in-out;
+  cursor: pointer;
+  margin-right: 6px;
+  overflow: hidden;
+  border: none;
+  border-radius: 50px;
+}
+
+button.button:before, a.button:before {
+  width: 100%;
+  height: 100%;
+  content: "";
+  display: block;
+  background-color: #fff;
+  position: absolute;
+  left: 0;
+  top: 0;
+  opacity: 0;
+  transition: all 0.2s;
+}

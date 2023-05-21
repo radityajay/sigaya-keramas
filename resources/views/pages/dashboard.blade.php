@@ -11,7 +11,7 @@
                   <div class="card-body">
                       <div class="d-flex">
                           <div class="flex-1 overflow-hidden">
-                              <p class="text-truncate font-size-14 mb-2">Number of User</p>
+                              <p class="text-truncate font-size-14 mb-2">Category</p>
                               <h4 class="mb-0">{{ $users }}</h4>
                           </div>
                           <div class="text-primary ms-auto">
@@ -26,7 +26,7 @@
                   <div class="card-body">
                       <div class="d-flex">
                           <div class="flex-1 overflow-hidden">
-                              <p class="text-truncate font-size-14 mb-2">Number of Position</p>
+                              <p class="text-truncate font-size-14 mb-2">Cagar Budaya</p>
                               <h4 class="mb-0">{{ $positions }}</h4>
                           </div>
                           <div class="text-primary ms-auto">
