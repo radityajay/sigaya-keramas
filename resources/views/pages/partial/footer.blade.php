@@ -4,7 +4,7 @@
             <div class="row">
                 <div class="col-md-4">
                     <div class="footer-logo">
-                        <img src="assets/front/img/logo-dark.svg" alt="SIGAYA">
+                        <img src="{{ asset('assets/images/logoo.png') }}" width="200" alt="SIGAYA">
                     </div>
                 </div>
                 <div class="col-md-4">

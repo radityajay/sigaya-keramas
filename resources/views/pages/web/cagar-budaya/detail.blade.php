@@ -5,6 +5,14 @@
 @section('content')
 <style>
     #mapid { height: 380px; }
+
+    button {
+        padding-top: 3px;
+        padding-bottom: 3px;
+        padding-right: 10px;
+        padding-left: 10px;
+        background-color: #A4C639;
+    }
 </style>
 <div>
     <div>
@@ -162,8 +170,20 @@
             const cagbud = t;
             cagbud.map(myFunction);
             function myFunction(item) {
-                return L.marker([item.lat, item.long], {icon: greenIcon}).bindPopup(item.name).addTo(map);
+                var content = "Lokasi yang Anda klik " + item.name + "<br><hr>" + "<a href='https://www.google.com/maps/dir/?api=1&destination=" + item.lat + "," + item.long + "' target='_blank' title='Klik untuk menuju lokasi'><button>Rute menuju lokasi</button></a>";
+                return L.marker([item.lat, item.long], {icon: greenIcon}).bindPopup(content).addTo(map);
             }
+
+            // function myFunction(item) {
+            //     var content = "Lokasi yang Anda klik " + item.lat + ", " + item.long + "<br><hr>" +
+            //     "<a href='https://www.google.com/maps/dir/?api=1&destination=" + item.lat + "," + item.long + "' target='_blank' title='Klik untuk menuju lokasi'><button>Rute menuju lokasi</button></a>";
+            //     popup
+            //     .setLatLng(item.lat, item.long)
+            //     .setContent(content)
+            //     .openOn(map);
+            // }
+
+            // map.on('click', myFunction);
         }
     })
 

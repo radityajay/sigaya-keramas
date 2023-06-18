@@ -58,12 +58,13 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        // dd($request->file('photo'));
+        //proses validasi
         $request->validate([
             'name' => 'required'
         ]);
 
         try{
+            //proses menambahkan foto pada storage link
             if (!empty($request->file('photo'))) {
                 $file = $request->file('photo');
 
@@ -72,6 +73,7 @@ class CategoryController extends Controller
                 $path = $request->file('photo')->storeAs('public/upload/icons/', $photo);
             }
 
+            //proses menambahkan data ke database
             Category::create([
                 'name' => $request->name,
                 'icons' => isset($photo) ? $photo : null,
@@ -132,13 +134,16 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // dd($request->all());
+        //untuk mendapatkan data foto sebelumnya
         $oldPhoto = Category::where('id', $id)->orderBy('created_at', 'desc')->first();
+
+        //untuk memvalidasi data request
         $request->validate([
             'name' => 'required'
         ]);
 
         try{
+            //untuk mengecek dan menambahkan foto didalam storage link
             if ($request->file('photo')) {
                 $file = $request->file('photo');
 
@@ -146,16 +151,17 @@ class CategoryController extends Controller
 
                 $path = $request->file('photo')->storeAs('public/upload/icons', $photo);
             } else {
+                //jika file photo tidak ada input baru maka akan menggunakan yang lama
                 $photo = $oldPhoto ? $oldPhoto->icons : '-';
             }
 
-
-
+            //penyimpan data request
             $formData = ([
                 'name' => $request->name,
                 'icons' => isset($photo) ? $photo : null,
             ]);
 
+            //mengupdate data request
             Category::find($id)->update($formData);
 
             return redirect()->route('category.index')
@@ -181,6 +187,14 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            //menghapus data yang sesuai id yang dipilih
+            Category::find($id)->delete();
+            return response()->json('Kategori berhasil dihapus');
+        } catch (\Exception $e) {
+            return response()->json("Error on line {$e->getLine()}: {$e->getMessage()}", 500);
+        } catch (\Throwable $e) {
+            return response()->json("Error on line {$e->getLine()}: {$e->getMessage()}", 500);
+        }
     }
 }

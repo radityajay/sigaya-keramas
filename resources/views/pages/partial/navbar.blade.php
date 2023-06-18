@@ -11,7 +11,7 @@
                 <button type="button" class="navbar-toggler navbar-toggler-left" data-toggle="collapse" data-target="#mega-menu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand  justify-content-between mr-auto m-sm-auto" href="index.html"> <img src="{{ asset('assets/front/img/logo-dark.svg') }}" alt="SIGAYA"> </a>
+                <a class="navbar-brand  justify-content-between mr-auto m-sm-auto" href="index.html"> <img src="{{ asset('assets/images/logoo.png') }}" class="image-responsive d-none d-lg-block" alt="SIGAYA" width="70"> <img src="{{ asset('assets/images/logoo.png') }}" class="image-responsive d-lg-none d-block" alt="SIGAYA" width="40"> </a>
                 <div class="collapse navbar-collapse justify-content-center" id="mega-menu">
                     <ul class="nav navbar-nav">
                         <li>
