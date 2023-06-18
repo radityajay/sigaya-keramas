@@ -210,7 +210,7 @@
                         <div class="col-wrap">
                             <div class="post-grid">
                                 <div class="img-block post-img">
-                                    <img src="{{ $item->photo_url }}" alt="images">
+                                    <img src="{{ $item->photo_url }}" alt="images" style="max-height: 208px !important">
                                 </div>
                                 <div class="post-text-block bg-gray-light">
                                     <h3 class="content-title mb-0"><b>{{ $item->name }}</b></h3>

@@ -81,7 +81,6 @@ class CagarBudayaController extends Controller
      */
     public function store(Request $request)
     {
-        // return $request->all();
         $request->validate([
             'name' => 'required',
             'description' => 'required',
@@ -98,22 +97,15 @@ class CagarBudayaController extends Controller
         ]);
 
         try {
-            // if (!empty($request->file('photo'))) {
-            //     $file = $request->file('photo');
-
-            //     $photo = time() . "-" . $file->getClientOriginalName();
-
-            //     $path = $request->file('photo')->storeAs('public/upload/cagar-budaya/', $photo);
-            // }
             $cagarBudaya = CagarBudaya::create([
-                            'name' => $request->name,
-                            'description' => $request->description,
-                            'sound' => $request->sound,
-                            'videos' => $request->video,
-                            'lat' => $request->latitude,
-                            'long' => $request->longitude,
-                            'category_id' => $request->category_id,
-                        ]);
+                'name' => $request->name,
+                'description' => $request->description,
+                'sound' => $request->sound,
+                'videos' => $request->video,
+                'lat' => $request->latitude,
+                'long' => $request->longitude,
+                'category_id' => $request->category_id,
+            ]);
 
             if ($request->list_cagarbudaya_images) {
                 foreach ($request->list_cagarbudaya_images as $index => $item) {

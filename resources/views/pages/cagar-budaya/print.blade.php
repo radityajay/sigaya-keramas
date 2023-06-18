@@ -72,22 +72,6 @@
             </div>
 
           </div>
-          {{-- <div class="col-md-4 offset-md-4" style="text-align: center">
-            <div class="title-qrcode">
-              <h1 class="py-3">{{ $data->name }}</h1>
-            </div>
-            <div class="my-4 content-qrcode">
-              <div class="line-qrcode">
-                {!! QrCode::size(200)->generate(route('cagar-budaya.show', $data->id)) !!}
-              </div>
-            </div>
-            <div class="title-qrcode mx-4">
-              <h1 class="py-3">SCAN ME</h1>
-            </div>
-            <div>
-              <p style="color: #062844">{{ route('cagar-budaya.show', $data->id) }}</p>
-            </div>
-          </div> --}}
         </div>
       </div> <!-- end card body-->
     </div> <!-- end card -->
