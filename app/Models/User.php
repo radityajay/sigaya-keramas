@@ -38,11 +38,6 @@ class User extends Authenticatable
         'is_active' => 'bool'
     ];
 
-    public function position()
-    {
-        return $this->belongsTo('App\Models\Position', 'position_id');
-    }
-
     /**
      *  Setup model event hooks
      */

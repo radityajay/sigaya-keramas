@@ -33,6 +33,13 @@
                     <div class="col-md-4">
                         <select class="form-control">
                             <option>Pilih Kategori</option>
+                            @foreach ($category as $item)
+                                @if (isset($data))
+                                    <option value="{{$item->id}}" {{$data->postion_id == $item->id ? 'selected' : ''}}>{{$item->name}}</option>
+                                @else
+                                    <option value="{{$item->id}}" {{old('category_id') == $item->id ? 'selected' : ''}}>{{$item->name}}</option>
+                                @endif
+                            @endforeach
                         </select>
                     </div>
                     <div class="col-md-4">
@@ -82,5 +89,17 @@
 
 @push('scripts')
 <script type="text/javascript">
+    var app = new Vue({
+        el: '#app',
+        data(){
+            return{
+                
+            }
+        },
+        methods: {
+        },
+        mounted(){    
+        }
+    })
 </script>
 @endpush

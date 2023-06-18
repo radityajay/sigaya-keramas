@@ -45,10 +45,12 @@ class HomeController extends Controller
 
     public function list_cagarbudaya(){
         $list_cagbud = CagarBudaya::with(['cagarBudayaImg'])->get();
-        // return $list_cagbud;
+        $category = Category::all();
+        // return $category;
         return view('pages.web.cagar-budaya.list',[
             'page_title' => 'List Cagar Budaya',
-            'list_cagbud' => $list_cagbud
+            'list_cagbud' => $list_cagbud,
+            'category' => $category,
         ]);
     }
 

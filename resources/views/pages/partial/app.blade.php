@@ -184,6 +184,7 @@
     <!-- Revolution Slider Script -->
     <script src="{{ asset('assets/front/js/revolution.js') }}"></script>
     <script src="https://cdn.jsdelivr.net/npm/swiper@8/swiper-bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 
     
     @stack('scripts')

@@ -76,7 +76,6 @@ class UserController extends Controller
             'name' => 'required',
             'username' => 'required|unique:users',
             'email' => 'required|unique:users',
-            'position_id' => 'required',
         ]);
 
         try{
@@ -84,7 +83,6 @@ class UserController extends Controller
                 'name' => $request->name,
                 'username' => $request->username,
                 'email' => $request->email,
-                'position_id' => $request->position_id,
                 'password' => bcrypt($request->password),
                 'is_active' => $request->is_active == 'true' ? true : false
             ]);
