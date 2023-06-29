@@ -215,19 +215,19 @@
                                 <div class="post-text-block bg-gray-light">
                                     <h3 class="content-title mb-0"><b>{{ $item->name }}</b></h3>
                                     <span class="content-sub-title">
-                                        <?= strlen($item->description) > 100 ? substr($item->description, 0, 100) . '...' : $item->description ?>
+                                        <?= strlen($item->description) > 80 ? substr($item->description, 0, 80) . '...' : $item->description ?>
                                     </span>
                                     <div class="post-meta clearfix">
                                         <div class="post-link-holder">
                                             <a href="{{ route('detail.cagarbudaya', $item->id) }}">See More <span class="fa fa-arrow-right"><span class="sr-only">&nbsp;</span></span></a>
                                         </div>
-                                        @if ($item->videos != null)
+                                        {{-- @if ($item->videos != null)
                                         <div class="post-social text-right">
                                             <ul class="social-network social-small">
                                                 <li><a href="{{ $item->videos }}"><i class="fa-brands fa-youtube"></i></a></li>
                                             </ul>
                                         </div>
-                                        @endif
+                                        @endif --}}
                                     </div>
                                 </div>
                             </div>
