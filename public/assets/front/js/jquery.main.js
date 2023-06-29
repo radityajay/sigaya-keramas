@@ -192,7 +192,7 @@ $(document).ready(function() {
                 },
                 overlay: {
                     css: {
-                        'background': 'rgba(0, 0, 0, 0.95)'
+                        // 'background': 'rgba(0, 0, 0, 0.95)'
                     }
                 }
             }
@@ -212,7 +212,7 @@ $(document).ready(function() {
                 },
                 overlay: {
                     css: {
-                        'background': 'rgba(0, 0, 0, 0.95)'
+                        // 'background': 'rgba(0, 0, 0, 0.95)'
                     }
                 }
             }
@@ -232,7 +232,7 @@ $(document).ready(function() {
                 },
                 overlay: {
                     css: {
-                        'background': 'rgba(0, 0, 0, 0.95)'
+                        // 'background': 'rgba(0, 0, 0, 0.95)'
                     }
                 }
             }
@@ -243,7 +243,7 @@ $(document).ready(function() {
         helpers: {
             overlay: {
                 css: {
-                    'background': 'rgba(0, 0, 0, 0.95)'
+                    // 'background': 'rgba(0, 0, 0, 0.95)'
                 }
             }
         }
