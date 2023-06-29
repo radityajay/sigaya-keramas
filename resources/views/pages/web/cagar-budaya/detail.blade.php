@@ -17,6 +17,10 @@
     button:active{
         border: 1px solid white !important;
     }
+
+    .fixed-top{
+        z-index: 10 !important;
+    }
 </style>
 <div id="app">
     @if ($data->sound)

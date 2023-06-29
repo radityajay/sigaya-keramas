@@ -974,7 +974,7 @@ h3 {
 /* header styles */
 
 .main-header {
-	z-index: 999999999;
+	/* z-index: 999999999; */
 	-webkit-transition: all linear .3s;
 	-o-transition: all linear .3s;
 	transition: all linear .3s;
@@ -7121,9 +7121,9 @@ a.full-width-icon:hover .social-text {
 	left: .9rem;
 }
 
-.fancybox-overlay {
+/* .fancybox-overlay {
 	z-index: 9999999999;
-}
+} */
 
 #fancybox-thumbs {
 	z-index: 99999999999;
