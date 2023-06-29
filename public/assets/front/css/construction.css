@@ -72,7 +72,7 @@ Version: 		1.0.0
     white-space: normal; }
 
 /*coffee cup*/
-.coffee_cup {
+/* .coffee_cup {
   width: 40px;
   height: 50px;
   border: 2px #f57f17 solid;
@@ -103,7 +103,7 @@ Version: 		1.0.0
           box-shadow: 5px 0px 0px 0px #f57f17, 5px -5px 0px 0px #f57f17, 10px 0px 0px 0px #f57f17;
   -webkit-animation: steam 700ms linear infinite alternate;
   -o-animation: steam 700ms linear infinite alternate;
-     animation: steam 700ms linear infinite alternate; }
+     animation: steam 700ms linear infinite alternate; } */
 
 @-webkit-keyframes steam {
   0% {

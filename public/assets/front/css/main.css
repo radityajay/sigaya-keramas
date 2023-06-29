@@ -54,6 +54,7 @@ Version: 		1.0.0
 	white-space: nowrap;
 	text-align: center;
 	background-color: #fff;
+	/* background-image: url("../../images/logoo.png") repeat center center; */
 	z-index: 9999999999;
 	-webkit-transition: all linear .3s;
 	-o-transition: all linear .3s;
@@ -82,7 +83,7 @@ Version: 		1.0.0
 
 /*coffee cup*/
 
-.coffee_cup {
+/* .coffee_cup {
 	width: 40px;
 	height: 50px;
 	border: 2px #5645ff solid;
@@ -117,7 +118,7 @@ Version: 		1.0.0
 	-webkit-animation: steam 700ms linear infinite alternate;
 	-o-animation: steam 700ms linear infinite alternate;
 	animation: steam 700ms linear infinite alternate;
-}
+} */
 
 .content-links,.filter-nav,.social-network,.content-list,.pricing-box-v1 .plan-features ul,.icon-lists ul,.nav-wrap ul.side-nav,.nav-wrap .header-links ul,.white-overlay .nav-wrap ul.side-nav,.white-overlay .nav-wrap .header-links ul,.tag-block ul,.blog-lists .blog-list-items,.instagram-widget ul,.footer-nav ul {
 	list-style: none;
