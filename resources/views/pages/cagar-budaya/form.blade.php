@@ -264,6 +264,10 @@
 
                         _this.list_cagarbudaya_images.push(response.data);
                     });
+                    this.on("error", function(file, message) { 
+                        console.log(message);
+                        _this.removeFile(file); 
+                    });
                 },
                 headers: {
                     'X-CSRF-TOKEN': "{{ csrf_token() }}"

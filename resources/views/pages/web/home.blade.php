@@ -134,7 +134,7 @@
         </section>
         <section class="content-block count-block text-center p-0 parallax" data-stellar-background-ratio="0.55">
             <div class="container-fluid">
-                <div class="row no-gutters">
+                <div class="row justify-content-center no-gutters">
                     @foreach ($category as $item)
                     <div class="col-sm-12 col-lg-2">
                         <div class="col-wrap">
