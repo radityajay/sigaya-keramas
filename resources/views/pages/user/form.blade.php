@@ -59,7 +59,7 @@
           
           <div class="mb-3">
             <label>Password</label>
-            <input type="password" name="password" class="form-control" required placeholder="Password" />
+            <input type="password" name="password" class="form-control" placeholder="Password" />
             @if (isset($data))
                 <small><i>*Leave blank if you don't want to change password</i></small>
             @endif

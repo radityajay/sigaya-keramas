@@ -33,10 +33,10 @@ class User extends Authenticatable
         'password'
     ];
 
-    protected $casts = [
-        'is_default' => 'bool',
-        'is_active' => 'bool'
-    ];
+    // protected $casts = [
+    //     'is_default' => 'bool',
+    //     'is_active' => 'bool'
+    // ];
 
     /**
      *  Setup model event hooks

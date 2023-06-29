@@ -9,9 +9,9 @@ use Illuminate\Support\Facades\DB;
 
 class ProfileController extends Controller
 {
-    public function edit()
+    public function edit($id)
     {
-        $id = Auth::guard('web')->user()->id;
+        // $id = Auth::guard('web')->user()->id;
 
         $data = User::whereId($id)->first();
         // dd($user);
@@ -23,6 +23,7 @@ class ProfileController extends Controller
 
     public function update(Request $request, $id)
     {   
+        // dd(User::find($id));
         // dd($request->all());
         DB::beginTransaction();
 
@@ -30,16 +31,18 @@ class ProfileController extends Controller
             $formData = ([
                 'name' => $request->name,
                 'username' => $request->username,
-                'email' => $request->email,
+                'email' => $request->email
             ]);
 
             if($request->password != null || $request->password != ''){
                 $formData['password'] = bcrypt($request->password);
             }
 
-            User::find($id)->update($formData);
+            // dd($formData);
 
-            return redirect()->route('profile.edit')
+            $user = User::find($id)->update($formData);
+
+            return redirect()->route('profile.edit', auth()->user()->id)
                 ->with('success', 'Profile berhasil dirubah!');
         } catch (\Exception $e) {
             return redirect()
