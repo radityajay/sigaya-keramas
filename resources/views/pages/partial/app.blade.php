@@ -45,6 +45,7 @@
         integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI="
         crossorigin=""/>
         {{-- <link media="all" rel="stylesheet" href="/assets/web/css/custom.css"> --}}
+        <link href="https://cdn.jsdelivr.net/npm/remixicon@3.4.0/fonts/remixicon.css" rel="stylesheet">
 </head>
 
 <body class="white-overlay">

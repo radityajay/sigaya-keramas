@@ -12,6 +12,10 @@
         padding-right: 10px;
         padding-left: 10px;
         background-color: #A4C639;
+        border: 1px solid white;
+    }
+    button:active{
+        border: 1px solid white !important;
     }
 </style>
 <div id="app">
@@ -73,6 +77,16 @@
                                 alt="images description"></div>
                     </div>
                     <div class="col-wrap">
+                        <div>
+                            <div class="d-flex align-items-center" style="cursor: pointer" @click="handlePlay()" v-if="states == false">
+                                <i class="ri-play-circle-line" style="font-size: 24px; color: #5db85b"></i>
+                                <span>Dengarkan</span>
+                            </div>
+                            <div class="d-flex align-items-center" style="cursor: pointer" @click="handleStop()" v-else>
+                                <i class="ri-stop-circle-line" style="font-size: 24px; color: #5db85b"></i>
+                                <span>Berhenti</span>
+                            </div>
+                        </div>
                         <div class="ico-box bg-gray-light has-radius-medium" style="text-align: justify !important;">
                             <div class="des">
                                 <?= $data->description ?>
@@ -214,16 +228,25 @@
         el: '#app',
         data(){
             return{
+                states: false
             }
         },
         methods: {
-            refreshData() {
+            handlePlay(){
+                this.states = true
                 this.$refs.audio.play()
-            }
+            },
+            handleStop(){
+                this.states = false
+                this.$refs.audio.pause()
+            },
+            // refreshData() {
+            //     this.$refs.audio.play()
+            // }
         },
         mounted(){    
-            this.refreshData()
-            setInterval(this.refreshData, 500)
+            // this.refreshData()
+            // setInterval(this.refreshData, 500)
         }
     })
 
