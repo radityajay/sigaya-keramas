@@ -59,7 +59,7 @@
             <div class="mt-3">
               <div class="qrcodecont">
                 <div class="qrcodecont-border">
-                  {!! QrCode::size(200)->generate(route('cagarbudaya.show', $data->id)) !!}
+                  {!! QrCode::size(200)->generate(route('detail.cagarbudaya', $data->id)) !!}
                 </div>
               </div>
               <div class="title-qrcode">

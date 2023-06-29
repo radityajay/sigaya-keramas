@@ -21,7 +21,6 @@
 <div id="app">
     @if ($data->sound)
     <audio
-    controls autoplay
     ref="audio"
     src="{{ $data->sound }}">
     </audio>
