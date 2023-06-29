@@ -99,7 +99,7 @@
                 </div>
                 <div class="col-lg-4 col-md-6 col-sm-12">
                     <div class="block-heading text-center">
-                        <h2 class="block-main-heading" style="text-transform: uppercase;  font-size: 2rem;">GALLERIES</h2>
+                        <h2 class="block-main-heading" style="text-transform: uppercase;  font-size: 2rem;">GALERI</h2>
                         <div class="divider"><img src="{{ asset('assets/front/img/divider.png') }}"
                                 alt="images description"></div>
                     </div>
