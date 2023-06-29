@@ -14,17 +14,17 @@
                     data-target="#mega-menu">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <a class="navbar-brand  justify-content-between mr-auto m-sm-auto" href="index.html"> <img
+                <a class="navbar-brand  justify-content-between mr-auto m-sm-auto" href="{{ url('/') }}"> <img
                         src="{{ asset('assets/images/logoo.png') }}" class="image-responsive d-none d-lg-block"
                         alt="SIGAYA" width="70"> <img src="{{ asset('assets/images/logoo.png') }}"
                         class="image-responsive d-lg-none d-block" alt="SIGAYA" width="40"> </a>
                 <div class="collapse navbar-collapse justify-content-center" id="mega-menu">
                     <ul class="nav navbar-nav">
                         <li>
-                            <a href="{{ url('/') }}" data-title="Home"> Beranda </a>
+                            <a href="{{ url('/') }}" data-title="Beranda"> Beranda </a>
                         </li>
                         <li>
-                            <a href="{{ route('list.cagarbudaya') }}" data-title="Home"> Cagar Budaya </a>
+                            <a href="{{ route('list.cagarbudaya') }}" data-title="List Cagar Budaya"> Cagar Budaya </a>
                         </li>
                         {{-- <li>
                             <a href="#" class="nav-search-link"><span class="icon-search"></span></a>

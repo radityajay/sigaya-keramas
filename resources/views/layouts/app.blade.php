@@ -4,13 +4,13 @@
     <head>
         
         <meta charset="utf-8" />
-        <title>@yield('title') | SIGAYA</title>
+        <title>Cagar Budaya Desa Keramas | @yield('title')</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta content="SIGAYA" name="description" />
         <meta name="csrf-token" content="{{ csrf_token() }}">
         <meta content="Themesdesign" name="author" />
         <!-- App favicon -->
-        <link rel="shortcut icon" href="assets/images/favicon.ico">
+        <link rel="shortcut icon" href="{{ asset('assets/images/logoo.png') }}">
 
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.css" />
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Dropify/0.2.2/css/dropify.min.css" />

@@ -12,8 +12,8 @@
                     <div class="col-md-4">
                         <div class="footer-nav inline-nav text-center">
                             <ul>
-                                <li><a href="#">Beranda</a></li>
-                                <li><a href="#">Cagar Budaya</a></li>
+                                <li><a href="{{ url('/') }}">Beranda</a></li>
+                                <li><a href="{{ route('list.cagarbudaya') }}">Cagar Budaya</a></li>
                             </ul>
                         </div>
                     </div>
@@ -40,8 +40,8 @@
                     <div class="col-8">
                         <div class="footer-nav text-center">
                             <ul class="d-flex">
-                                <li class="mr-3"><a href="#">Beranda</a></li>
-                                <li><a href="#">Cagar Budaya</a></li>
+                                <li class="mr-3"><a href="{{ url('/') }}">Beranda</a></li>
+                                <li><a href="{{ route('cagar-budaya.index') }}">Cagar Budaya</a></li>
                             </ul>
                         </div>
                     </div>
