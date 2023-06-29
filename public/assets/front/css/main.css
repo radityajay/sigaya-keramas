@@ -6753,7 +6753,7 @@ input:focus:-ms-input-placeholder,textarea:focus:-ms-input-placeholder {
 
 .social-network {
 	font-size: 1.25rem;
-	line-height: 1.2;
+	/* line-height: 1.2; */
 }
 
 .social-network li {
@@ -12271,7 +12271,7 @@ a.full-width-icon:hover .social-text {
 	.main-header .navbar .navbar-brand {
 		margin-left: auto;
 		padding: 1.2rem 0;
-		width: 6.938rem;
+		/* width: 6.938rem; */
 		display: block;
 	}
 

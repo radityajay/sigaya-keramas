@@ -14,7 +14,14 @@
         background-color: #A4C639;
     }
 </style>
-<div>
+<div id="app">
+    @if ($data->sound)
+    <audio
+    controls autoplay
+    ref="audio"
+    src="{{ $data->sound }}">
+    </audio>
+    @endif
     <div>
         <div class="d-lg-none">
             <div class="swiper mySwiper mySwiperSlider mb-3">
@@ -54,13 +61,6 @@
                 </div>
                 <!-- If we need pagination -->
                 <div class="swiper-pagination"></div>
-    
-                <!-- If we need navigation buttons -->
-                {{-- <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div> --}}
-    
-                <!-- If we need scrollbar -->
-                {{-- <div class="swiper-scrollbar"></div> --}}
             </div>
         </div>
     
@@ -91,7 +91,7 @@
                         <div class="col-sm-2 col-md-2 col-lg-6">
                             <figure class="caption-hover-full">
                                 <a data-thumbnail="{{ $item->photo_url }}" class="fancybox-thumb fancy-pop"
-                                    title="Portfolio 12" href="{{ $item->photo_url }}"></a>
+                                    title="{{ $data->name }}" href="{{ $item->photo_url }}"></a>
                                 <div class="image-wrapper"><img src="{{ $item->photo_url }}" alt="images description"></div>
                             </figure>
                         </div>
@@ -162,7 +162,7 @@
 
     $.ajax({
         type: "GET",
-        url: "{{ url('/') }}/api/cagar-budaya",
+        url: "/api/cagar-budaya/maps",
         data: {
             "_token": "{{ csrf_token() }}"
         },
@@ -210,7 +210,22 @@
         },
     });
 
-    
+    var app = new Vue({
+        el: '#app',
+        data(){
+            return{
+            }
+        },
+        methods: {
+            refreshData() {
+                this.$refs.audio.play()
+            }
+        },
+        mounted(){    
+            this.refreshData()
+            setInterval(this.refreshData, 500)
+        }
+    })
 
 </script>
 @endpush

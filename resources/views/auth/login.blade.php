@@ -30,10 +30,13 @@
             <div class="w-100">
               <div class="row justify-content-center">
                 <div class="col-lg-9">
+                  <div class="text-center">
+                    <img src="{{ asset('assets/images/logoo.png') }}" width="100" alt="SIGAYA">
+                  </div>
                   <div>
                     <div class="text-center">
-                      <h4 class="font-size-18 mt-4">Welcome Back !</h4>
-                      <p class="text-muted">Sign in to continue to SIGAYA.</p>
+                      <h4 class="font-size-18 mt-4">Selamat Datang !</h4>
+                      <p class="text-muted">Silahkan masuk untuk melanjutkan.</p>
                     </div>
 
                     <div class="p-2 mt-5">
@@ -73,7 +76,7 @@
                         </div>
 
                         <div class="mt-4 text-center">
-                          <button class="btn btn-primary w-md waves-effect waves-light" type="submit">Log In</button>
+                          <button class="btn btn-success w-md waves-effect waves-light" type="submit">Log In</button>
                         </div>
                       </form>
                     </div>

@@ -20,17 +20,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', [HomeController::class, 'index']);
-Route::get('/detail/{id}/cagar-budaya', [HomeController::class, 'show'])->name('detail.cagarbudaya');
+Route::get('/cagar-budaya/{id}/detail', [HomeController::class, 'show'])->name('detail.cagarbudaya');
 Route::get('/list/cagar-budaya', [HomeController::class, 'list_cagarbudaya'])->name('list.cagarbudaya');
 
 Route::resource('cagarbudaya', CagarBudayaController::class);
-
-// Route::get('login', [AuthController::class, 'showLoginForm'])->name('login.form');
-// Route::post('login', [AuthController::class, 'login'])->name('login');
-// Route::post('logout', [AuthController::class, 'logout'])->name('logout');
-
-// Route::middleware(['auth'])->group(function () {
-//     Route::get('dashboard', [DashboardController::class, 'index'])->name('dashboard');
-//     Route::resource('users', UserController::class);
-//     Route::resource('position', PositionController::class);
-// });

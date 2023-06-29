@@ -83,6 +83,7 @@ class CagarBudayaController extends Controller
     {
         $request->validate([
             'name' => 'required',
+            'category_id' => 'required',
             'description' => 'required',
             'latitude' => 'required',
             'longitude' => 'required',
@@ -90,8 +91,9 @@ class CagarBudayaController extends Controller
             'required' => ':attribute tidak boleh kosong!',
             'unique' => ':attribute sudah digunakan!'
         ], [
-            'title' => 'judul',
-            'description' => 'deskripsi',
+            'name' => 'Judul',
+            'description' => 'Deskripsi',
+            'category_id' => 'Kategori',
             'latitude' => 'titik latitude pada maps',
             'longitude' => 'titik latitude pada maps',
         ]);

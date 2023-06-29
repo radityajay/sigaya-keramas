@@ -45,8 +45,15 @@
             <div class="col-lg-6">
               <div class="mb-3">
                 <label><span style="color: red">*</span> Nama</label>
-                <input type="text" name="name" class="form-control" required placeholder="Pura Kebo Edan"
+                <input type="text" name="name" class="form-control" placeholder="Pura Kebo Edan"
                   value="{{isset($data) ? $data->name : old('name')}}" />
+                  @if ($errors->any())
+                  @foreach ($errors->getMessages() as $key => $val)
+                  @if($key == "name")
+                  <div style="color: red;"> {{ $errors->first('name') }}</div>
+                  @endif
+                  @endforeach
+                  @endif
               </div>
               <div class="mb-3">
                 <label>Link Sound</label>
@@ -56,7 +63,7 @@
             </div>
             <div class="col-lg-6">
               <div class="mb-3">
-                <label>Kategori</label>
+                <label><span style="color: red">*</span> Kategori</label>
                 <select name="category_id" required class="form-control">
                   <option value="null" disabled>Select Kategori</option>
                   @foreach ($category as $item)
@@ -71,7 +78,7 @@
               <div class="mb-3">
                 <label>Link Video</label>
                 <input type="text" name="video" class="form-control" placeholder=""
-                  value="{{isset($data) ? $data->video : old('video')}}" />
+                  value="{{isset($data) ? $data->videos : old('videos')}}" />
               </div>
             </div>
           </div>

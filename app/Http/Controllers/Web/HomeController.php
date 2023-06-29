@@ -54,8 +54,23 @@ class HomeController extends Controller
         ]);
     }
 
-    public function listCagarBudayaApi(){
+    public function filterCagarBudaya(Request $request){
+        // dd($request->all());
+        $data = CagarBudaya::when($request->category_id != null && $request->category_id != 'null', function ($query) use($request) {
+            return $query->where('category_id', $request->category_id);
+        })
+        ->when($request->search != null && $request->search != 'null', function ($query) use($request) {
+            return $query->where('name', 'like', '%' . $request->search . '%');
+        })
+        ->get();
+        // dd($data);
+        return response()->json($data, 200);
+    }
+
+    public function listCagarBudayaApi(Request $request){
+        // dd($request->all());
         $data = CagarBudaya::all();
+        // dd($data);
         return response()->json($data, 200);
     }
 }

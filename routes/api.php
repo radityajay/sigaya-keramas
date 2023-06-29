@@ -20,5 +20,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 });
 
 Route::controller(HomeController::class)->group(function () {
-    Route::get('cagar-budaya', 'listCagarBudayaApi');
+    Route::get('cagar-budaya', 'filterCagarBudaya');
+    Route::get('cagar-budaya/maps', 'listCagarBudayaApi');
 });

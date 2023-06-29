@@ -34,7 +34,7 @@
       <h4 class="mb-sm-0">List {{ $page_title }}</h4>
 
       <div class="page-title-right">
-        <a href="{{ route('category.create') }}" class="btn btn-primary btn-icon-text">
+        <a href="{{ route('category.create') }}" class="btn btn-success btn-icon-text">
           <div>
             <i style="font-size: 18px;float: left;margin-right: 5px;" class="ri ri-add-circle-line"></i> <span
               style="position: relative;top: 4px;">Add {{ $page_title }}</span>

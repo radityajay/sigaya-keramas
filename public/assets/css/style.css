@@ -98,3 +98,14 @@
   top: 0;
   opacity: 0.3 !important;
 }
+
+.page-item.active .page-link {
+  z-index: 3;
+  color: #fff;
+  background-color: #169f77 !important;
+  border-color: #169f77 !important;
+}
+
+.text-primary {
+  color: #169f77!important;
+}

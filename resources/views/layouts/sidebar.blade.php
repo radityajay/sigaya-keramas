@@ -17,7 +17,7 @@
 
         <li>
           <a href="{{ route('cagar-budaya.index') }}" class="waves-effect">
-            <i class="ri-dashboard-line"></i>
+            <i class="ri-ancient-gate-fill"></i>
             <span>Cagar Budaya</span>
           </a>
         </li>
@@ -32,7 +32,7 @@
         </li> --}}
         <li>
           <a href="{{ route('category.index') }}" class="waves-effect">
-            <i class="ri-contacts-book-line"></i>
+            <i class="ri-layout-grid-fill"></i>
             <span>Kategori</span>
           </a>
         </li>
