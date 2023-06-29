@@ -45,7 +45,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('pages.category.Form', [
+        return view('pages.category.form', [
             'page_title' => 'Add Kategori',
         ]);
     }
