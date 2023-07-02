@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class HomeController extends Controller
 {
     public function index(){
-        $list_cagbud = CagarBudaya::with(['cagarBudayaImg'])->limit(3)->get();
+        $list_cagbud = CagarBudaya::with(['cagarBudayaImg'])->limit(3)->orderBy('created_at', 'desc')->get();
         // $cagarBudaya = Category::limit(5)->pluck('id');
         // $total = CagarBudaya::whereIn('category_id',$cagarBudaya)->count('id');
         $category = Category::limit(5)->get();
@@ -44,7 +44,7 @@ class HomeController extends Controller
     }
 
     public function list_cagarbudaya(){
-        $list_cagbud = CagarBudaya::with(['cagarBudayaImg'])->get();
+        $list_cagbud = CagarBudaya::with(['cagarBudayaImg'])->orderBy('created_at', 'desc')->get();
         $category = Category::all();
         // return $category;
         return view('pages.web.cagar-budaya.list',[
@@ -62,6 +62,7 @@ class HomeController extends Controller
         ->when($request->search != null && $request->search != 'null', function ($query) use($request) {
             return $query->where('name', 'like', '%' . $request->search . '%');
         })
+        ->orderBy('created_at', 'desc')
         ->get();
         // dd($data);
         return response()->json($data, 200);
