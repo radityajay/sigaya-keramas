@@ -215,7 +215,7 @@
                                 <div class="post-text-block bg-gray-light">
                                     <h3 class="content-title mb-0"><b>{{ $item->name }}</b></h3>
                                     <span class="content-sub-title">
-                                        <?= strlen($item->description) > 80 ? substr($item->description, 0, 80) . '...' : $item->description ?>
+                                        <?= strlen($item->description) > 90 ? substr($item->description, 0, 90) . '...' : $item->description ?>
                                     </span>
                                     <div class="post-meta clearfix">
                                         <div class="post-link-holder">
