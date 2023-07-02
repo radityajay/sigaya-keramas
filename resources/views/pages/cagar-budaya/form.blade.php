@@ -68,7 +68,7 @@
                   <option value="null" disabled>Select Kategori</option>
                   @foreach ($category as $item)
                       @if (isset($data))
-                          <option value="{{$item->id}}" {{$data->postion_id == $item->id ? 'selected' : ''}}>{{$item->name}}</option>
+                          <option value="{{$item->id}}" {{$data->category_id == $item->id ? 'selected' : ''}}>{{$item->name}}</option>
                       @else
                           <option value="{{$item->id}}" {{old('category_id') == $item->id ? 'selected' : ''}}>{{$item->name}}</option>
                       @endif
@@ -155,8 +155,8 @@
   
             <div class="col-md-12">
                 <div class="form-group" style="float: right">
-                    <a href="#" class="btn btn-light"><i class="ri-arrow-left-line"></i>  Kembali</a>
-                    <button type="submit" class="btn btn-danger mr-2"><i class="ri-save-line"></i> Simpan</button>
+                    <a href="{{ route('cagar-budaya.index') }}" class="btn btn-light"><i class="ri-arrow-left-line"></i>  Kembali</a>
+                    <button type="submit" class="btn btn-success mr-2"><i class="ri-save-line"></i> Simpan</button>
                 </div>
             </div>
         </div>

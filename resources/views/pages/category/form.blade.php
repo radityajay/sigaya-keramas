@@ -59,16 +59,12 @@
             @endif
           </div>
 
-          <div class="mb-0" style="float: right">
-            <div>
-              <button type="submit" class="btn btn-primary waves-effect waves-light me-1">
-                Submit
-              </button>
-              <button type="reset" class="btn btn-secondary waves-effect">
-                Cancel
-              </button>
+          <div class="col-md-12">
+            <div class="form-group" style="float: right">
+                <a href="{{ route('category.index') }}" class="btn btn-light"><i class="ri-arrow-left-line"></i>  Kembali</a>
+                <button type="submit" class="btn btn-success mr-2"><i class="ri-save-line"></i> Simpan</button>
             </div>
-          </div>
+        </div>
         </form>
 
       </div>
