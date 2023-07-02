@@ -80,6 +80,7 @@
                                 alt="images description"></div>
                     </div>
                     <div class="col-wrap">
+                        @if ($data->sound != null)
                         <div>
                             <div class="d-flex align-items-center" style="cursor: pointer" @click="handlePlay()" v-if="states == false">
                                 <i class="ri-play-circle-line" style="font-size: 24px; color: #5db85b"></i>
@@ -90,6 +91,7 @@
                                 <span>Berhenti</span>
                             </div>
                         </div>
+                        @endif
                         <div class="ico-box bg-gray-light has-radius-medium" style="text-align: justify !important;">
                             <div class="des">
                                 <?= $data->description ?>

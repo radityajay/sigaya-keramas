@@ -100,7 +100,7 @@
                                 </div>
                                 <div class="post-text-block bg-gray-light">
                                     <h3 class="content-title mb-0"><b>@{{ item.name }}</b></h3>
-                                    <span class="content-sub-title" v-html="item.description.slice(0,80)">
+                                    <span class="content-sub-title" v-html="item.description.slice(0,90)">
 
                                     </span>
                                     <div class="post-meta clearfix">
