@@ -266,7 +266,15 @@ class CagarBudayaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        try {
+            //menghapus data yang sesuai id yang dipilih
+            CagarBudaya::find($id)->delete();
+            return response()->json('Cagar Budaya berhasil dihapus');
+        } catch (\Exception $e) {
+            return response()->json("Error on line {$e->getLine()}: {$e->getMessage()}", 500);
+        } catch (\Throwable $e) {
+            return response()->json("Error on line {$e->getLine()}: {$e->getMessage()}", 500);
+        }
     }
 
     public function upload(Request $request)
