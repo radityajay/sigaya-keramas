@@ -24,7 +24,16 @@ class CagarBudaya extends Model
         'photo',
         'lat',
         'long',
-        'category_id'
+        'category_id',
+        'opened',
+        'closed',
+        'additional_info',
+        'address',
+        'color',
+        'ticket',
+        'info_ticket',
+        'contact_number',
+        'contact_name',
     ];
 
     /**

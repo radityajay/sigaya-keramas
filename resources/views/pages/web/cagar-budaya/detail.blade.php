@@ -128,6 +128,76 @@
                         </iframe>
                     </div>
                     @endif
+
+                    <section class="content-block">
+                        <div class="container">
+                            <div class="accordion-container">
+                                <div id="accordion" role="tablist" aria-multiselectable="true">
+                                    @if ($data->opened && $data->closed || $data->contact_name && $data->contact_number)
+                                    <div class="card">
+                                        <div class="card-header" role="tab" id="headingOne">
+                                            <h5 class="mb-0"><a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">Waktu dan Kontak</a></h5>
+                                        </div>
+                                        <div id="collapseOne" class="collapse show" role="tabpanel" aria-labelledby="headingOne">
+                                            <div class="card-block">
+                                                <div class="data-table">
+                                                    <table class="table">
+                                                        <tbody>
+                                                            <tr>
+                                                                <td>Jam Buka</td>
+                                                                <td>:</td>
+                                                                <td>{{ $data->opened ?? '-' }} WITA</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Jam Tutup</td>
+                                                                <td>:</td>
+                                                                <td>{{ $data->closed ?? '-' }} WITA</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Kontak Name</td>
+                                                                <td>:</td>
+                                                                <td>{{ $data->contact_name ?? '-' }}</td>
+                                                            </tr>
+                                                            <tr>
+                                                                <td>Kontak Nomor</td>
+                                                                <td>:</td>
+                                                                <td>{{ $data->contact_number ?? '-' }}</td>
+                                                            </tr>
+                                                        </tbody>
+                                                    </table>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endif
+                                    @if ($data->info_ticket)
+                                    <div class="card">
+                                        <div class="card-header" role="tab" id="headingTwo">
+                                            <h5 class="mb-0"><a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">Info Tiket</a></h5>
+                                        </div>
+                                        <div id="collapseTwo" class="collapse" role="tabpanel" aria-labelledby="headingTwo">
+                                            <div class="card-block">
+                                                <?= $data->info_ticket ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endif
+                                    @if ($data->additional_info)
+                                    <div class="card">
+                                        <div class="card-header" role="tab" id="headingThree">
+                                            <h5 class="mb-0"><a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapseThree" aria-expanded="false" aria-controls="collapseThree">Info Lainnya</a></h5>
+                                        </div>
+                                        <div id="collapseThree" class="collapse" role="tabpanel" aria-labelledby="headingThree">
+                                            <div class="card-block">
+                                                <?= $data->additional_info ?>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    @endif
+                                </div>
+                            </div>
+                        </div>
+                    </section>
                 </div>
             </div>
             <div class="block-heading d-lg-block d-none">
@@ -172,12 +242,10 @@
             console.log(error);
         }
     }
-
-    var greenIcon = L.icon({
-        iconUrl: '{{ asset("assets/front/icons/temple.png") }}',
-
-        iconSize:     [70, 70], // size of the icon
-    });
+    // var greenIcon = L.icon({
+    //     iconUrl: '{{ asset("assets/front/icons/temple.png") }}',
+    //     iconSize:     [70, 70], // size of the icon
+    // });
 
     $.ajax({
         type: "GET",
@@ -189,6 +257,26 @@
             const cagbud = t;
             cagbud.map(myFunction);
             function myFunction(item) {
+                const markerHtmlStyles = `
+                background-color: ${item.color};
+                width: 3rem;
+                height: 3rem;
+                display: block;
+                left: -1.5rem;
+                top: -1.5rem;
+                position: relative;
+                border-radius: 3rem 3rem 0;
+                transform: rotate(45deg);
+                border: 1px solid #FFFFFF`
+
+                var greenIcon = L.divIcon({
+                    className: "my-custom-pin",
+                    iconAnchor: [0, 24],
+                    labelAnchor: [-6, 0],
+                    popupAnchor: [0, -36],
+                    html: `<span style="${markerHtmlStyles}" />`
+                });
+
                 var content = "Lokasi yang Anda klik " + item.name + "<br><hr>" + "<a href='https://www.google.com/maps/dir/?api=1&destination=" + item.lat + "," + item.long + "' target='_blank' title='Klik untuk menuju lokasi'><button>Rute menuju lokasi</button></a>";
                 return L.marker([item.lat, item.long], {icon: greenIcon}).bindPopup(content).addTo(map);
             }

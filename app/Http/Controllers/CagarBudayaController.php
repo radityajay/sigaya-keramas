@@ -81,6 +81,7 @@ class CagarBudayaController extends Controller
      */
     public function store(Request $request)
     {
+        // dd($request->all());
         $request->validate([
             'name' => 'required',
             'category_id' => 'required',
@@ -107,6 +108,13 @@ class CagarBudayaController extends Controller
                 'lat' => $request->latitude,
                 'long' => $request->longitude,
                 'category_id' => $request->category_id,
+                'opened' => $request->opened,
+                'closed' => $request->closed,
+                'additional_info' => $request->additional_info,
+                'color' => $request->color,
+                'info_ticket' => $request->info_ticket,
+                'contact_number' => $request->contact_number,
+                'contact_name' => $request->contact_name,
             ]);
 
             if ($request->list_cagarbudaya_images) {
@@ -220,6 +228,14 @@ class CagarBudayaController extends Controller
                 'photo' => isset($photo) ? $photo : null,
                 'lat' => $request->latitude,
                 'long' => $request->longitude,
+                'category_id' => $request->category_id,
+                'opened' => $request->opened,
+                'closed' => $request->closed,
+                'additional_info' => $request->additional_info,
+                'color' => $request->color,
+                'info_ticket' => $request->info_ticket,
+                'contact_number' => $request->contact_number,
+                'contact_name' => $request->contact_name,
             ]);
 
             CagarBudaya::find($id)->update($form);

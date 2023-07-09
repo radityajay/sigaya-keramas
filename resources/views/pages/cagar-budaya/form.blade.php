@@ -95,6 +95,64 @@
             @endforeach
             @endif
           </div>
+
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="mb-3">
+                <label><span style="color: red">*</span> Jam Buka</label>
+                <input class="form-control" name="opened" type="time" value="{{isset($data) ? $data->opened : old('opened')}}" id="example-time-input">
+              </div>
+              <div class="mb-3">
+                <label>Nama Kontak</label>
+                <input type="text" name="contact_name" class="form-control" placeholder="ex.Pak/Bu Eka"
+                  value="{{isset($data) ? $data->contact_name : old('contact_name')}}" />
+                  @if ($errors->any())
+                  @foreach ($errors->getMessages() as $key => $val)
+                  @if($key == "contact_name")
+                  <div style="color: red;"> {{ $errors->first('contact_name') }}</div>
+                  @endif
+                  @endforeach
+                  @endif
+              </div>
+
+              <div class="mb-3">
+                <label>Info Tiket</label>
+                <textarea class="form-control" id="ckeditor-ticket" name="info_ticket" cols="30"
+                  rows="3">{{ isset($data) ? $data->info_ticket : old('info_ticket') }}</textarea>
+                @if ($errors->any())
+                @foreach ($errors->getMessages() as $key => $val)
+                @if($key == "info_ticket")
+                <div style="color: red;"> {{ $errors->first('info_ticket') }}</div>
+                @endif
+                @endforeach
+                @endif
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="mb-3">
+                <label><span style="color: red">*</span> Jam Tutup</label>
+                <input class="form-control" name="closed" type="time" value="{{isset($data) ? $data->closed : old('closed')}}" id="example-time-input">
+              </div>
+              <div class="mb-3">
+                <label>Kontak Nomor</label>
+                <input type="text" name="contact_number" class="form-control" placeholder="087234289590"
+                  value="{{isset($data) ? $data->contact_number : old('contact_number')}}" />
+              </div>
+
+              <div class="mb-3">
+                <label>Info lainnya</label>
+                <textarea class="form-control" id="ckeditors" name="additional_info" cols="30"
+                  rows="3">{{ isset($data) ? $data->additional_info : old('additional_info') }}</textarea>
+                @if ($errors->any())
+                @foreach ($errors->getMessages() as $key => $val)
+                @if($key == "additional_info")
+                <div style="color: red;"> {{ $errors->first('additional_info') }}</div>
+                @endif
+                @endforeach
+                @endif
+              </div>
+            </div>
+          </div>
   
           {{-- <div class="mb-3">
             <label><span style="color: red">*</span> Foto</label>
@@ -128,15 +186,18 @@
             <div class="col-lg-6">
             </div>
           </div>
-          
-  
+          <div class="row">
+            <div class="mb-3">
+              <label>Warna titik lokasi</label>
+              <input type="color" name="color" class="form-control form-control-color mw-100" id="example-color-input" value="{{isset($data) ? $data->color : old('color')}}" title="Choose your color">
+            </div>
+          </div>
         </div>
       </div>
   
       <div class="card">
         <div class="card-body">
             <h4 class="card-title">Gambar Cagar Budaya</h4>
-  
             <div class="d-flex mb-3">
                 <div v-for="(item, index) in list_cagarbudaya_images" v-if="item.photo_url" style="margin-right: 10px !important">
                     <img :src="item.photo_url ?? `/storage/upload/cagar-budaya/` + item" height="100px" width="100px">
@@ -181,6 +242,26 @@
     
     CKEDITOR.replace(
         'ckeditor',
+        {
+            toolbar: [
+                ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo','FontSize', 'Bold', 'Italic','Underline','Center','Link', 'Unlink']
+            ],
+            height: 200
+        },
+    );
+
+    CKEDITOR.replace(
+        'ckeditors',
+        {
+            toolbar: [
+                ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo','FontSize', 'Bold', 'Italic','Underline','Center','Link', 'Unlink']
+            ],
+            height: 200
+        },
+    );
+
+    CKEDITOR.replace(
+        'ckeditor-ticket',
         {
             toolbar: [
                 ['Cut', 'Copy', 'Paste', 'PasteText', 'PasteFromWord', '-', 'Undo', 'Redo','FontSize', 'Bold', 'Italic','Underline','Center','Link', 'Unlink']
